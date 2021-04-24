@@ -7,4 +7,9 @@ export default class extends Controller {
 	this.sourceTarget.select()
 	document.execCommand("copy")
     }
+    connect() {
+	if (document.queryCommandSupported("copy")) {
+	    this.element.classList.add("clipboard--supported")
+	}
+    }
 }
